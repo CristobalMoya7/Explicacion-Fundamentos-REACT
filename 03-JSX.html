@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <!-- Babel nos transforma el codigo de abajo en JS para que el navegador lo entienda. -->
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone@7.8.3/babel.min.js"
+  ></script>
+
+  <!-- Esto no es HTML, es JSX que es una extension que transpila el codigo -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    const element = (
+      <div className="container" id="id" children="Goodbye World!">
+        <span className="item">Hello World!</span>
+      </div>
+    );
+    console.log(element);
+
+    ReactDOM.createRoot(rootElement).render(element);
+  </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone@7.8.3/babel.min.js"
+  ></script>
+
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    const className = 'container';
+    const hello = 'Hello World!';
+
+    const props = {
+      className: className,
+      id: 'id',
+      style: { color: 'red' },
+    };
+
+    const handleClick = () => {
+      console.log('clicked');
+    };
+
+    const element = (
+      <div {...props} onClick={handleClick}> 
+        <span className="item">{true ? 'Hello' : 'Goodbye'}</span>
+        <div>{5 + 5}</div>
+        <div>{`${hello} World`}</div>
+        <div>{null}</div>
+        <div>{true}</div>
+        <div>{false}</div>
+        <div>true</div>
+        <div>{JSON.stringify({ a: 1 })}</div>
+      </div>
+    );
+    console.log(element);
+
+    ReactDOM.createRoot(rootElement).render(element);
+  </script>
+</html>

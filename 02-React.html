@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <!-- REACT DOM: Esta libreria se encarga de hacer que nuestro codigo se visualice en el navegador -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
+  <script type="text/javascript">
+    const rootElement = document.getElementById('root');
+
+    // const element = document.createElement('div');
+    const element = React.createElement(
+      'div',
+      {
+        className: 'container',
+        children: 'Hello World!',
+        id: 'id',
+        style: { color: 'red' },
+      },
+      React.createElement('span', { children: 'Hello' }),
+    );
+
+    console.log(element);
+
+    // element.textContent = 'Hello World!';
+    // element.className = 'container';
+
+    // rootElement.appendChild(element);
+    ReactDOM.createRoot(rootElement).render(element);
+  </script>
+</html>
